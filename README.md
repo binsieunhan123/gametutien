@@ -45,6 +45,8 @@ services:
 npm install
 
 
+Sau khi server hoạt động, truy cập `/login` để đăng ký hoặc đăng nhập.
+
 # Khởi chạy backend Socket.IO (cần MongoDB)
 MONGO_URL=mongodb://localhost:27017 npm run server
 

@@ -36,12 +36,12 @@ const wishlistBonus = {
 
 // 装备品质
 const equipmentQualities = {
-  common: { name: '凡品', color: '#9e9e9e', statMod: 1.0, maxStatMod: 1.5 },
-  uncommon: { name: '下品', color: '#4caf50', statMod: 1.2, maxStatMod: 2.0 },
-  rare: { name: '中品', color: '#2196f3', statMod: 1.5, maxStatMod: 2.5 },
-  epic: { name: '上品', color: '#9c27b0', statMod: 2.0, maxStatMod: 3.0 },
-  legendary: { name: '极品', color: '#ff9800', statMod: 2.5, maxStatMod: 3.5 },
-  mythic: { name: '仙品', color: '#e91e63', statMod: 3.0, maxStatMod: 4.0 }
+  common: { name: 'Phàm phẩm', color: '#9e9e9e', statMod: 1.0, maxStatMod: 1.5 },
+  uncommon: { name: 'Hạ phẩm', color: '#4caf50', statMod: 1.2, maxStatMod: 2.0 },
+  rare: { name: 'Trung phẩm', color: '#2196f3', statMod: 1.5, maxStatMod: 2.5 },
+  epic: { name: 'Thượng phẩm', color: '#9c27b0', statMod: 2.0, maxStatMod: 3.0 },
+  legendary: { name: 'Cực phẩm', color: '#ff9800', statMod: 2.5, maxStatMod: 3.5 },
+  mythic: { name: 'Tiên phẩm', color: '#e91e63', statMod: 3.0, maxStatMod: 4.0 }
 }
 
 // 装备类型
@@ -209,31 +209,31 @@ const equipmentBaseStats = {
 // 灵宠品质配置
 const petRarities = {
   divine: {
-    name: '神品',
+    name: 'Thần phẩm',
     color: '#FF0000',
     probability: 0.002,
     essenceBonus: 50
   },
   celestial: {
-    name: '仙品',
+    name: 'Tiên phẩm',
     color: '#FFD700',
     probability: 0.0581,
     essenceBonus: 30
   },
   mystic: {
-    name: '玄品',
+    name: 'Huyền phẩm',
     color: '#9932CC',
     probability: 0.1601,
     essenceBonus: 20
   },
   spiritual: {
-    name: '灵品',
+    name: 'Linh phẩm',
     color: '#1E90FF',
     probability: 0.2801,
     essenceBonus: 10
   },
   mortal: {
-    name: '凡品',
+    name: 'Phàm phẩm',
     color: '#32CD32',
     probability: 0.4997,
     essenceBonus: 5

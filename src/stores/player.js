@@ -19,11 +19,11 @@ export const usePlayerStore = defineStore('player', {
     petEssence: 0, // 灵宠精华
     petConfig: {
       rarityMap: {
-        divine: { name: '神品', color: '#FF0000', probability: 0.02, essenceBonus: 50 },
-        celestial: { name: '仙品', color: '#FFD700', probability: 0.08, essenceBonus: 30 },
-        mystic: { name: '玄品', color: '#9932CC', probability: 0.15, essenceBonus: 20 },
-        spiritual: { name: '灵品', color: '#1E90FF', probability: 0.25, essenceBonus: 10 },
-        mortal: { name: '凡品', color: '#32CD32', probability: 0.5, essenceBonus: 5 }
+        divine: { name: 'Thần phẩm', color: '#FF0000', probability: 0.02, essenceBonus: 50 },
+        celestial: { name: 'Tiên phẩm', color: '#FFD700', probability: 0.08, essenceBonus: 30 },
+        mystic: { name: 'Huyền phẩm', color: '#9932CC', probability: 0.15, essenceBonus: 20 },
+        spiritual: { name: 'Linh phẩm', color: '#1E90FF', probability: 0.25, essenceBonus: 10 },
+        mortal: { name: 'Phàm phẩm', color: '#32CD32', probability: 0.5, essenceBonus: 5 }
       }
     },
     // 基础属性

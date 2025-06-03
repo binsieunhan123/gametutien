@@ -35,52 +35,52 @@ const baseGainRate = 1  // 基础灵力获取率
 const getMenuOptions = () => {
   menuOptions.value = [,
     ...(isNewPlayer.value ? [{
-      label: '欢迎',
+      label: 'Chào mừng',
       key: '',
       icon: renderIcon(HomeOutlined)
     }] : []),
     {
-      label: '修炼',
+      label: 'Tu luyện',
       key: 'cultivation',
       icon: renderIcon(BookOutlined)
     },
     {
-      label: '背包',
+      label: 'Túi đồ',
       key: 'inventory',
       icon: renderIcon(ExperimentOutlined)
     },
     {
-      label: '抽奖',
+      label: 'Quay thưởng',
       key: 'gacha',
       icon: renderIcon(GiftOutlined)
     },
     {
-      label: '炼丹',
+      label: 'Luyện đan',
       key: 'alchemy',
       icon: renderIcon(MedicineBoxOutlined)
     },
     {
-      label: '探索',
+      label: 'Thám hiểm',
       key: 'exploration',
       icon: renderIcon(CompassOutlined)
     },
     {
-      label: '秘境',
+      label: 'Bí cảnh',
       key: 'dungeon',
       icon: renderIcon(Flash)
     },
     {
-      label: '成就',
+      label: 'Thành tựu',
       key: 'achievements',
       icon: renderIcon(TrophyOutlined)
     },
     {
-      label: '设置',
+      label: 'Cài đặt',
       key: 'settings',
       icon: renderIcon(SettingOutlined)
     },
     ...(playerStore.isGMMode ? [{
-      label: 'GM调试',
+      label: 'GM',
       key: 'gm',
       icon: renderIcon(SmileOutlined)
     }] : []),
@@ -125,13 +125,13 @@ const handleMenuClick = (key) => {
   <n-config-provider :theme="playerStore.isDarkMode ? darkTheme : null">
     <n-message-provider>
       <n-dialog-provider>
-        <n-spin :show="isLoading" description="正在加载游戏数据...">
+        <n-spin :show="isLoading" description="Đang tải dữ liệu trò chơi...">
           <n-layout>
             <n-layout-header bordered>
               <div class="header-content">
                 <n-page-header>
                   <template #title>
-                    我的放置仙途
+                    Tu Tiên Nhàn Rỗi
                   </template>
                   <template #extra>
                     <n-button quaternary circle @click="playerStore.toggle">

@@ -10,8 +10,14 @@ import GM from '../views/GM.vue'
 import Alchemy from '../views/Alchemy.vue'
 import Dungeon from '../views/Dungeon.vue'
 import Gacha from '../views/Gacha.vue'
+import Login from '../views/Login.vue'
 
 const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
   {
     path: '/',
     name: 'Home',
