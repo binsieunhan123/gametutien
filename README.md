@@ -49,8 +49,15 @@ services:
 # 安装依赖
 npm install
 
+# 启动基于 Socket.IO 的后端（需要 MongoDB）
+MONGO_URL=mongodb://localhost:27017 npm run server
+
 # 开发环境运行
 npm run dev
+
+# 如需指定后端地址，设置 VITE_API_URL 环境变量
+VITE_API_URL=http://localhost:3000 npm run dev
+# 客户端会通过 Socket.IO 同步数据
 
 # 构建生产版本
 npm run build
