@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const props = defineProps({
   title: {
     type: String,
-    default: '系统日志'
+    default: 'Nhật ký hệ thống'
   },
   messages: {
     type: Array,
@@ -12,22 +12,22 @@ const props = defineProps({
   }
 })
 
-// 日志数组和滚动引用
+// Mảng log và tham chiếu cuộn
 const logs = ref([])
 const scrollRef = ref(null)
 
-// 创建Web Worker实例
+// Tạo Web Worker
 const logWorker = ref(null)
 
-// 初始化Web Worker
+// Khởi tạo Worker
 onMounted(() => {
   logWorker.value = new Worker(new URL('../workers/log.js', import.meta.url), { type: 'module' })
 
-  // 监听Worker消息
+  // Lắng nghe thông điệp từ Worker
   logWorker.value.onmessage = (e) => {
     if (e.data.type === 'LOGS_UPDATED') {
       logs.value = e.data.logs
-      // 下一帧滚动到底部
+      // Cuộn xuống cuối ở frame tiếp theo
       setTimeout(() => {
         if (scrollRef.value) {
           scrollRef.value.scrollTo({ top: 99999, behavior: 'smooth' })
@@ -37,14 +37,14 @@ onMounted(() => {
   }
 })
 
-// 组件卸载时清理Worker
+// Hủy Worker khi component unmount
 onUnmounted(() => {
   if (logWorker.value) {
     logWorker.value.terminate()
   }
 })
 
-// 添加日志的方法
+// Hàm thêm log
 const addLog = (type, content) => {
   if (logWorker.value) {
     logWorker.value.postMessage({
@@ -54,7 +54,7 @@ const addLog = (type, content) => {
   }
 }
 
-// 暴露方法给父组件
+// Expose
 defineExpose({
   addLog
 })
@@ -76,7 +76,7 @@ defineExpose({
           </span>
         </div>
       </div>
-      <n-empty v-else description="暂无日志" />
+      <n-empty v-else description="Chưa có nhật ký" />
     </n-scrollbar>
   </n-card>
 </template>
