@@ -44,6 +44,7 @@ services:
 # Cài đặt phụ thuộc
 npm install
 
+
 # Khởi chạy backend Socket.IO (cần MongoDB)
 MONGO_URL=mongodb://localhost:27017 npm run server
 
@@ -56,7 +57,7 @@ VITE_API_URL=http://localhost:3000 npm run dev
 
 # Build bản phát hành
 npm run build
-```
+
 
 ## Cảm ơn
 
