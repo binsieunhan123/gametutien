@@ -49,31 +49,31 @@ const usePill = (pill) => {
 // 灵宠品质配置
 const petRarities = {
   divine: {
-    name: '神品',
+    name: 'Thần phẩm',
     color: '#FF0000',
     probability: 0.02,
     essenceBonus: 50
   },
   celestial: {
-    name: '仙品',
+    name: 'Tiên phẩm',
     color: '#FFD700',
     probability: 0.08,
     essenceBonus: 30
   },
   mystic: {
-    name: '玄品',
+    name: 'Huyền phẩm',
     color: '#9932CC',
     probability: 0.15,
     essenceBonus: 20
   },
   spiritual: {
-    name: '灵品',
+    name: 'Linh phẩm',
     color: '#1E90FF',
     probability: 0.25,
     essenceBonus: 10
   },
   mortal: {
-    name: '凡品',
+    name: 'Phàm phẩm',
     color: '#32CD32',
     probability: 0.5,
     essenceBonus: 5
@@ -519,12 +519,12 @@ const equipmentComparison = computed(() => {
 })
 
 const options = [
-  { label: '全部品阶', value: 'all' },
-  { label: '神品', value: 'divine' },
-  { label: '仙品', value: 'celestial' },
-  { label: '玄品', value: 'mystic' },
-  { label: '灵品', value: 'spiritual' },
-  { label: '凡品', value: 'mortal' }
+  { label: 'Tất cả', value: 'all' },
+  { label: 'Thần phẩm', value: 'divine' },
+  { label: 'Tiên phẩm', value: 'celestial' },
+  { label: 'Huyền phẩm', value: 'mystic' },
+  { label: 'Linh phẩm', value: 'spiritual' },
+  { label: 'Phàm phẩm', value: 'mortal' }
 ]
 </script>
 
@@ -533,7 +533,7 @@ const options = [
     <n-layout-header bordered>
       <n-page-header>
         <template #title>
-          背包
+          Túi đồ
         </template>
       </n-page-header>
     </n-layout-header>
