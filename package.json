@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open --port 2025",
     "build": "vite build",
-    "preview": "vite preview --open --port 2026"
+    "preview": "vite preview --open --port 2026",
+    "server": "node server/server.js"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
@@ -15,6 +16,10 @@
     "@vue/cli-service": "~5.0.0",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "mongodb": "^5.9.0",
+    "express": "^4.18.2",
     "crypto-js": "^4.2.0",
     "file-saver": "^2.0.5",
     "pinia": "^3.0.1",
