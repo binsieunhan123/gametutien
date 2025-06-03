@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
 import { GameDB } from './db'
+import { RemoteDB } from './remoteDB'
 import { pillRecipes, tryCreatePill, calculatePillEffect } from '../plugins/pills'
 import { encryptData, decryptData, validateData } from '../plugins/crypto'
 import { getRealmName, getRealmLength } from '../plugins/realm'
+const DB = import.meta.env.VITE_API_URL ? RemoteDB : GameDB
 
 export const usePlayerStore = defineStore('player', {
   state: () => ({
@@ -243,7 +245,7 @@ export const usePlayerStore = defineStore('player', {
     // 初始化玩家数据
     async initializePlayer () {
       try {
-        const savedData = await GameDB.getData('playerData')
+        const savedData = await DB.getData('playerData')
         if (savedData) {
           const decryptedData = decryptData(savedData)
           if (decryptedData && validateData(decryptedData)) {
@@ -273,7 +275,7 @@ export const usePlayerStore = defineStore('player', {
       const encryptedData = encryptData(this.$state)
       if (encryptedData) {
         try {
-          await GameDB.setData('playerData', encryptedData)
+          await DB.setData('playerData', encryptedData)
         } catch (error) {
           console.error('数据保存失败:', error)
         }
@@ -284,7 +286,7 @@ export const usePlayerStore = defineStore('player', {
     // 导出存档数据
     async exportData () {
       try {
-        const data = await GameDB.getData('playerData')
+        const data = await DB.getData('playerData')
         return data
       } catch (error) {
         console.error('导出存档失败:', error)
@@ -294,7 +296,7 @@ export const usePlayerStore = defineStore('player', {
     // 导入存档数据
     async importData (encryptedData) {
       try {
-        await GameDB.setData('playerData', encryptedData)
+        await DB.setData('playerData', encryptedData)
         this.$reset()
         await this.initializePlayer()
       } catch (error) {
@@ -305,7 +307,7 @@ export const usePlayerStore = defineStore('player', {
     // 清除存档数据
     async clearData () {
       try {
-        await GameDB.setData('playerData', null)
+        await DB.setData('playerData', null)
       } catch (error) {
         console.error('清除存档失败:', error)
         throw error
