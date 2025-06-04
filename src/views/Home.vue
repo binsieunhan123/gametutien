@@ -6,13 +6,13 @@ const router = useRouter()
 const playerStore = usePlayerStore()
 const message = useMessage()
 
-// 领取新手礼包
+// Nhận gói tân thủ
 const receiveNewPlayerGift = () => {
   playerStore.spiritStones += 20000
   playerStore.isNewPlayer = false
   router.push('/cultivation')
-  message.success('获得20000灵石')
-  message.success('新手礼包领取成功')
+  message.success('Nhận được 20000 linh thạch')
+  message.success('Nhận gói tân thủ thành công')
 }
 
 </script>
@@ -20,14 +20,14 @@ const receiveNewPlayerGift = () => {
 <template>
   <n-space class="home-container" vertical>
     <n-space justify="center">
-      <h2>感谢游玩我的放置仙途</h2>
+      <h2>Cảm ơn bạn đã chơi Tu Tiên Nhàn Rỗi</h2>
     </n-space>
     <n-space justify="center">
-      <p>开始你的修仙之旅吧！</p>
+      <p>Hãy bắt đầu hành trình tu tiên của bạn!</p>
     </n-space>
     <n-space justify="center" v-if="playerStore.isNewPlayer">
       <n-button type="success" @click="receiveNewPlayerGift">
-        领取新手礼包
+        Nhận gói tân thủ
       </n-button>
     </n-space>
   </n-space>
